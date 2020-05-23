@@ -7,7 +7,7 @@
 
 //
 // Compile: g++ Main.cpp Log/Log.cpp -I"C:/libsdl/include" -L"C:/libsdl/lib" -lmingw32 -lSDL2main -lSDL2 -o test.exe
-// 2: g++ Main.cpp Log/Log.cpp -I"C:/libsdl/include" -L"C:/libsdl/lib" -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -o "..\build\test.exe"
+// 2: g++ Main.cpp Log/Log.cpp -I"C:/libsdl/include" -L"C:/libsdl/lib" -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -o "..\build\build.exe"
 //
 
 const char* gameTitle = "2DGame";

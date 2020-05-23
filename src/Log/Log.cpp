@@ -23,6 +23,10 @@ void Log::setLogLevel(Log::Level logLevelIn) {
 /// Functions
 ///
 
+void Log::write() {
+    std::cout << std::endl;
+}
+
 void Log::write(const char *message) {
     std::cout << message << std::endl;
 }

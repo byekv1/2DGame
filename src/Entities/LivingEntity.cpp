@@ -4,7 +4,7 @@
 /// Getters
 ///
 
-int LivingEntity::getHealth() {
+int LivingEntity::getHealth() const {
     return health;
 }
 
@@ -12,8 +12,13 @@ int LivingEntity::getHealth() {
 /// Setters
 ///
 
-void LivingEntity::setHealth(int healthIn) {
+void LivingEntity::setHealth(const int healthIn) {
     health = healthIn;
+}
+
+void LivingEntity::setHealth(const int *healthInPtr) {
+    if (healthInPtr) health = *healthInPtr;
+    else Log::write("Null healthInPtr passed in Entity::setX(const int *).", Log::Warning);
 }
 
 ///
@@ -37,11 +42,9 @@ std::string LivingEntity::toString() {
 /// Constructors
 ///
 
-LivingEntity::LivingEntity() : LivingEntity(0) {}
+LivingEntity::LivingEntity() : health(0), Entity::Entity(0,0) {}
 
-LivingEntity::LivingEntity(int healthIn) : LivingEntity(0, 0, healthIn) {}
+LivingEntity::LivingEntity(int healthIn) : health(healthIn), Entity::Entity(0,0) {}
 
-LivingEntity::LivingEntity(int xIn, int yIn, int healthIn) : Entity::Entity(xIn, yIn) {
-    setHealth(healthIn);
-}
+LivingEntity::LivingEntity(int xIn, int yIn, int healthIn) : health(0), Entity::Entity(xIn, yIn) {}
 

@@ -1,11 +1,14 @@
 #pragma once
 #include <string>
+#include "../Log/Log.h"
 #include "../Stringable.h"
+
 
 ///
 /// Forward Declaration
 ///
 
+class Log;
 class Stringable;
 
 ///
@@ -29,15 +32,17 @@ public:
     /// Getters
     ///
 
-    int getX();
-    int getY();
+    int getX() const;
+    int getY() const;
 
     ///
     /// Setters
     ///
 
-    void setX(int xIn);
-    void setY(int yIn);
+    void setX(const int xIn);
+    void setX(const int *xInPtr);
+    void setY(const int yInPtr);
+    void setY(const int *yInPtr);
 
     ///
     /// String Representation
@@ -51,6 +56,6 @@ public:
     ///
 
     Entity();
-    Entity(int xIn, int yIn);
+    Entity(const int xIn, const int yIn);
 
 };

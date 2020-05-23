@@ -5,6 +5,7 @@
 /// Forward Declaration
 ///
 
+class Log;
 class Stringable;
 
 ///
@@ -27,13 +28,14 @@ public:
     /// Getters
     ///
 
-    int getHealth();
+    int getHealth() const;
 
     ///
     /// Setters
     ///
 
-    void setHealth(int healthIn);
+    void setHealth(const int healthIn);
+    void setHealth(const int *healthInPtr);
 
     ///
     /// String Representation

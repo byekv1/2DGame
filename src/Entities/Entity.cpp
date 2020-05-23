@@ -5,11 +5,11 @@
 /// Getters
 ///
 
-int Entity::getX() {
+int Entity::getX() const {
     return x;
 }
 
-int Entity::getY() {
+int Entity::getY() const {
     return y;
 }
 
@@ -17,12 +17,22 @@ int Entity::getY() {
 /// Setters
 ///
 
-void Entity::setX(int xIn) {
+void Entity::setX(const int xIn) {
     x = xIn;
 }
 
-void Entity::setY(int yIn) {
+void Entity::setX(const int *xInPtr) {
+    if (xInPtr) x = *xInPtr;
+    else Log::write("Null xInPtr passed in Entity::setX(const int *).", Log::Warning);
+}
+
+void Entity::setY(const int yIn) {
     y = yIn;
+}
+
+void Entity::setY(const int *yInPtr) {
+    if (yInPtr) y = *yInPtr; 
+    else Log::write("Null xInPtr passed in Entity::setX(const int *).", Log::Warning);
 }
 
 ///
@@ -46,9 +56,6 @@ std::string Entity::toString() {
 /// Constructors
 ///
 
-Entity::Entity() : Entity(0,0) {}
+Entity::Entity() : x(0), y(0) {}
 
-Entity::Entity(int xIn, int yIn) {
-    setX(xIn);
-    setY(yIn);
-}
+Entity::Entity(const int xIn, const int yIn) : x(xIn), y(yIn) {}

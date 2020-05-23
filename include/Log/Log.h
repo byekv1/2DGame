@@ -57,6 +57,8 @@ public:
     /// Functions
     ///
 
+    static void write();
+
     static void write(const char *message);
 
     static void write(const char *message, Log::Level logLevelTypeIn);
