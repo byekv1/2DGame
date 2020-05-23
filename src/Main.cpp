@@ -6,8 +6,8 @@
 #include "../include/Log/Log.h"
 
 //
-// Compile: g++ *.cpp -I"C:/libsdl/include" -L"C:/libsdl/lib" -lmingw32 -lSDL2main -lSDL2 -o test.exe
-// 2: g++ *.cpp -I"C:/libsdl/include" -L"C:/libsdl/lib" -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -o test.exe
+// Compile: g++ Main.cpp Log/Log.cpp -I"C:/libsdl/include" -L"C:/libsdl/lib" -lmingw32 -lSDL2main -lSDL2 -o test.exe
+// 2: g++ Main.cpp Log/Log.cpp -I"C:/libsdl/include" -L"C:/libsdl/lib" -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -o "..\build\test.exe"
 //
 
 const char* gameTitle = "2DGame";
@@ -107,7 +107,7 @@ int main(int argc, char *argv[]) {
     std::cout << gameTitle << " ended..." << std::endl;
     std::cout << "Press Enter to Terminate..." << std::endl;
     std::cin.get();
-
-   return 0;
+    
+    return 0;
 
 }

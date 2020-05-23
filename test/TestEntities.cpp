@@ -11,7 +11,7 @@ class LivingEntity;
 
 //
 //  Compile:
-//      g++ ../src/Log.cpp ../src/Entities/*.cpp TestEntities.cpp -o TestEntities.exe
+//      g++ ../src/Log/Log.cpp ../src/Entities/*.cpp TestEntities.cpp -o TestEntities.exe
 //
 
 int main() {
