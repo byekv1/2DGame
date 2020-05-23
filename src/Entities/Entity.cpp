@@ -17,7 +17,7 @@ int Entity::getY() const {
 /// Setters
 ///
 
-void Entity::setX(const int xIn) {
+void Entity::setX(const int &xIn) {
     x = xIn;
 }
 
@@ -26,7 +26,7 @@ void Entity::setX(const int *xInPtr) {
     else Log::write("Null xInPtr passed in Entity::setX(const int *).", Log::Warning);
 }
 
-void Entity::setY(const int yIn) {
+void Entity::setY(const int &yIn) {
     y = yIn;
 }
 
@@ -58,4 +58,4 @@ std::string Entity::toString() {
 
 Entity::Entity() : x(0), y(0) {}
 
-Entity::Entity(const int xIn, const int yIn) : x(xIn), y(yIn) {}
+Entity::Entity(const int &xIn, const int &yIn) : x(xIn), y(yIn) {}

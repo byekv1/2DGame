@@ -34,7 +34,7 @@ public:
     /// Setters
     ///
 
-    void setHealth(const int healthIn);
+    void setHealth(const int &healthIn);
     void setHealth(const int *healthInPtr);
 
     ///
@@ -48,7 +48,7 @@ public:
     ///
 
     LivingEntity();
-    LivingEntity(int healthIn);
-    LivingEntity(int xIn, int yIn, int healthIn);
+    LivingEntity(int &healthIn);
+    LivingEntity(int &xIn, int &yIn, int &healthIn);
 
 };

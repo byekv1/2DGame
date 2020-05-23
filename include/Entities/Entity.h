@@ -39,9 +39,9 @@ public:
     /// Setters
     ///
 
-    void setX(const int xIn);
+    void setX(const int &xIn);
     void setX(const int *xInPtr);
-    void setY(const int yInPtr);
+    void setY(const int &yInPtr);
     void setY(const int *yInPtr);
 
     ///
@@ -56,6 +56,6 @@ public:
     ///
 
     Entity();
-    Entity(const int xIn, const int yIn);
+    Entity(const int &xIn, const int &yIn);
 
 };

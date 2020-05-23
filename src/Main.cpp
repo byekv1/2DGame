@@ -4,11 +4,23 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include "../include/Log/Log.h"
+#include "../include/Game/Game.h"
+
+///
+/// Forward Declarations
+///
+
+class Game;
+class Log;
 
 //
-// Compile: g++ Main.cpp Log/Log.cpp -I"C:/libsdl/include" -L"C:/libsdl/lib" -lmingw32 -lSDL2main -lSDL2 -o test.exe
-// 2: g++ Main.cpp Log/Log.cpp -I"C:/libsdl/include" -L"C:/libsdl/lib" -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -o "..\build\build.exe"
+// Compile: g++ Main.cpp Log/Log.cpp -I"C:/libsdl/include" -L"C:/libsdl/lib" -lmingw32 -lSDL2main -lSDL2 -o "..\build\build.exe"
+// 2: g++ Main.cpp Log/Log.cpp Game/Game.cpp -I"C:/libsdl/include" -L"C:/libsdl/lib" -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -o "..\build\build.exe"
 //
+
+///
+/// MAIN FUNCTION
+///
 
 const char* gameTitle = "2DGame";
 const int width = 1280;
@@ -22,7 +34,6 @@ int main(int argc, char *argv[]) {
     //  Initialization
     //
 
-    bool quiting = false;
     Log::setLogLevel(Log::Trace);
     std::cout << gameTitle << " started..." << std::endl;
 
@@ -53,7 +64,11 @@ int main(int argc, char *argv[]) {
     //  Game Loop
     //
 
-    while(!quiting) {
+    Game gameInstance;
+
+    while(!gameInstance.isOver()) {
+
+        bool quitFlag = true;
 
         //
         //  Process Input
@@ -63,7 +78,7 @@ int main(int argc, char *argv[]) {
 
         if (event.type == SDL_QUIT) {
             Log::write("ALT+F4 typed...", Log::Notification);
-            quiting = true;
+            gameInstance.setOver(quitFlag);
         }
 
         switch(event.key.keysym.sym) {
